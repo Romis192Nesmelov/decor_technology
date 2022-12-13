@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaseController;
+use App\Http\Controllers\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,4 @@ use App\Http\Controllers\BaseController;
 Route::get('/', [BaseController::class, 'index'])->name('home');
 Route::get('/portfolio/{slug}', [BaseController::class, 'portfolio'])->name('portfolio');
 Route::get('/news/{slug?}', [BaseController::class, 'news'])->name('news');
+Route::post('/feedback', [PostController::class, 'feedback'])->name('feedback');

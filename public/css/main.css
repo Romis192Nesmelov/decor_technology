@@ -16,11 +16,40 @@ h1 {
 .btn-primary {
     color: #fff;
     background-color: #43ab92;
-    border-color: #43ab92;
+    border: 1px solid #358673;
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: #358673;
+}
+
+.form-check-input:checked {
+    background-color: #358673;
+    border-color: #358673;
+}
+
+.btn-primary:disabled {
+    background-color: gray;
+    border: 1px solid darkgrey;
+}
+
+#loader {
+    width: 100%;
+    height: 100%;
+    background: none repeat scroll 0 0 #ffffff;
+    opacity: 0.6;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+#loader > img {
+    width: 50px;
 }
 
 #main-nav.top-fix {

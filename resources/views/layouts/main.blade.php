@@ -39,18 +39,27 @@
 </head>
 
 <body>
+    <x-modal head="Спасибо за обращение!" id="message">
+        <div class="modal-body"><h5 class="text-center"></h5></div>
+    </x-modal>
+
     <x-modal head="Перезвоните мне!" id="feedback-modal">
-        <form class="form">
+        <form class="form" method="post" action="{{ route('feedback') }}">
+            @csrf
             <div class="modal-body">
-                <div class="input-group flex-nowrap">
-                        <span class="input-group-text" id="addon-wrapping">
-                            <i class="icon-iphone"></i>
-                        </span>
+                <div class="input-group flex-nowrap mb-3">
+                    <span class="input-group-text" id="addon-wrapping"><i class="icon-iphone"></i></span>
                     <input type="text" placeholder="+7(___)___-__-__" class="form-control" name="phone">
                 </div>
+                @include('blocks.checkbox_block',[
+                    'id' => 'agree-check',
+                    'checked' => true,
+                    'name' => 'agree',
+                    'label' => 'Даю согласие на обработку персональных данных',
+                ])
             </div>
             <div class="modal-footer">
-                <button type="submit" class="btn btn-primary rounded-0">Отправить</button>
+                <button type="submit" disabled class="btn btn-primary rounded-0">Отправить</button>
             </div>
         </form>
     </x-modal>
@@ -146,16 +155,22 @@
                 <div class="col-md-4 ml-auto">
                     <div class="mb-5">
                         <h2 class="footer-heading mb-4">Обратная связь</h2>
-                        <form action="#" method="post" class="form footer-suscribe-form">
+                        <form action="{{ route('feedback') }}" method="post" class="form footer-suscribe-form">
+                            @csrf
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="+7(___)___-__-__" class="form-control" name="phone">
+                                <input class="form-control rounded-0 border-secondary text-white bg-transparent" placeholder="+7(___)___-__-__" name="phone">
                                 <div class="input-group-append">
-                                    <button class="btn btn-primary text-white" type="button" id="button-addon2">Перезвонить!</button>
+                                    <button class="btn btn-primary text-white rounded-0" type="submit" disabled>Перезвонить!</button>
                                 </div>
                             </div>
+                            @include('blocks.checkbox_block',[
+                                'id' => 'agree-check',
+                                'checked' => true,
+                                'name' => 'agree',
+                                'label' => 'Даю согласие на обработку персональных данных',
+                            ])
                         </form>
                     </div>
-
                     <h2 class="footer-heading mb-4">Наши работы в сети</h2>
                     <a href="#" class="smoothscroll px-0"><span class="icon-facebook"></span></a>
                     <a href="#" class="px-3 pr-3"><span class="icon-instagram"></span></a>

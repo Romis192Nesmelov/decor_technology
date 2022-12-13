@@ -1,22 +1,28 @@
 $(document).ready(function ($) {
-    $('input[name=phone]').mask("+7(999)999-99-99");
+
+    $('input[name=phone]').keyup(function () {
+            unlockSendButton($(this));
+        }
+    ).mask("+7(999)999-99-99", {
+        completed: function () {
+            unlockSendButton($(this));
+        }
+    });
+
+    $('input[name=agree]').change(function () {
+        unlockSendButton($(this));
+    });
 
     $('form.form button[type=submit]').click(function(e) {
         e.preventDefault();
         var body = $('body'),
             form = $(this).parents('form'),
             popup = form.parents('.modal'),
-            button = form.find('button[type=submit]'),
             agree = form.find('input[name=agree]'),
-            loader = $('<div></div>').attr('id','loader').append($('<div></div>')),
+            loader = $('<div></div>').attr('id','loader').append($('<img />').attr('src','/images/preloader.gif')),
             formData = new FormData;
 
         if (!agree.is(':checked')) return false;
-
-        agree.change(function () {
-            if (agree.is(':checked')) button.removeAttr('disabled');
-            else button.attr('disabled','disabled');
-        });
 
         form.find('input, textarea, select').each(function () {
             var self = $(this);
@@ -29,8 +35,6 @@ $(document).ready(function ($) {
         form.find('input, select, textarea, button').attr('disabled','disabled');
         addLoader(body,loader);
 
-        console.log(234234);
-
         $.ajax({
             url: form.attr('action'),
             data: formData,
@@ -39,10 +43,10 @@ $(document).ready(function ($) {
             type: 'POST',
             success: function (data) {
                 closePopup(body,popup);
-                unlockAll(body,form,loader);
+                lockAll(body,form,loader);
                 form.find('input, textarea').val('');
                 var messageModal = $('#message');
-                messageModal.find('h3').html(data.message);
+                messageModal.find('h5').html(data.message);
                 messageModal.modal('show');
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -62,7 +66,6 @@ $(document).ready(function ($) {
                     });
                     errorBlock.html(errorMsg).show();
                 });
-                unlockAll(body,form,loader);
             }
         });
     });
@@ -91,8 +94,9 @@ function processingCheckFields(formData, inputObj) {
     return formData;
 }
 
-function unlockAll(body,form,loader) {
-    form.find('input, select, textarea, button').removeAttr('disabled');
+function lockAll(body,form,loader) {
+    form.find('button').attr('disabled','disabled');
+    form.find('input[name=phone]').val('');
     loader.remove();
 }
 
@@ -104,11 +108,21 @@ function closePopup(body,modal) {
     });
 }
 
-
 function addLoader(body,loader) {
-    body.prepend(loader.css('top',window.scrollY));
+    body.append(loader);
     body.css({
         'overflow':'hidden',
         'padding-right':20
     });
+}
+
+function unlockSendButton(obj) {
+    let phoneRegExp = /^((\+)?(\d)(\s)?(\()?[0-9]{3}(\))?(\s)?([0-9]{3})(\-)?([0-9]{2})(\-)?([0-9]{2}))$/gi,
+        form = obj.parents('form'),
+        checkBox = form.find('input[name=agree]'),
+        phoneInput = form.find('input[name=phone]'),
+        button = form.find('button[type=submit]');
+
+    if (checkBox.is(':checked') && phoneInput.val().match(phoneRegExp)) button.removeAttr('disabled');
+    else button.attr('disabled','disabled');
 }

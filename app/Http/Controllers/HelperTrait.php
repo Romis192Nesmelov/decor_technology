@@ -48,15 +48,15 @@ trait HelperTrait
 //        return $time[1].'/'.$time[0].'/'.$time[2];
 //    }
 
-    private function sendMessage($template, array $fields, $pathToFile=null, $copyTo=null)
-    {
-        $title = trans('content.company_name');
-        $fields['title'] = $title;
-        Mail::send('emails.'.$template, $fields, function($message) use ($title, $pathToFile, $copyTo) {
-            $message->subject(trans('content.message_from',['from' => $title]));
-            $message->to(env('MAIL_TO'));
-            if ($copyTo) $message->cc($copyTo);
-            if ($pathToFile) $message->attach($pathToFile);
-        });
-    }
+//    private function sendMessage($template, array $fields, $pathToFile=null, $copyTo=null)
+//    {
+//        $title = trans('content.company_name');
+//        $fields['title'] = $title;
+//        Mail::send('emails.'.$template, $fields, function($message) use ($title, $pathToFile, $copyTo) {
+//            $message->subject(trans('content.message_from',['from' => $title]));
+//            $message->to(env('MAIL_TO'));
+//            if ($copyTo) $message->cc($copyTo);
+//            if ($pathToFile) $message->attach($pathToFile);
+//        });
+//    }
 }

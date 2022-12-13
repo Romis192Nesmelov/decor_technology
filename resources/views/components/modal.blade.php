@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">{{ $attributes->get('head') }}</h5>
+                <h6 class="modal-title">{{ $attributes->get('head') }}</h6>
                 <button type="button" class="btn-close bg-light" data-bs-dismiss="modal" aria-label="Закрыть"></button>
             </div>
             {{ $slot }}
