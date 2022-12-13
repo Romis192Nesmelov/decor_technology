@@ -21,8 +21,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&amp;display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link href="{{ asset('icons/icomoon/styles.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('icons/fontawesome/styles.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/icons/icomoon/styles.css') }}">
+    <link href="{{ asset('css/icons/fontawesome/styles.min.css') }}">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
