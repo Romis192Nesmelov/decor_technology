@@ -1,6 +1,8 @@
 <li {{ isset($liClass) && $liClass ? 'class='.$liClass : '' }}>
     <a {{ isset($aClass) ? 'class='.$aClass.(isset($activeFlag) && $activeFlag ? ' active' : '') : '' }}
-        @if (isset($menuItem['href']))
+       @if (request()->path() != '/' && !isset($menuItem['href']))
+           href="{{ route('home',['scroll' => $menuItem['scroll']]) }}"
+       @elseif (isset($menuItem['href']))
             @if (isset($routePrefix))
                 href="{{ route($routePrefix, $menuItem['href']) }}"
             @else

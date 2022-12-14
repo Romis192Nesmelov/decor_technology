@@ -17,7 +17,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicons/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicons/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicons/favicon-16x16.png') }}">
-    <link rel="mask-icon" href="{{ asset('images/favicons/safari-pinned-tab.svg" color="#ed7e23') }}">
+    <link rel="mask-icon" href="{{ asset('images/favicons/safari-pinned-tab.svg" color="#5bbad5') }}">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <link href="https://fonts.googleapis.com/css?family=DM+Sans:300,400,700&amp;display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -39,8 +41,8 @@
 </head>
 
 <body>
-    <x-modal head="Спасибо за обращение!" id="message">
-        <div class="modal-body"><h5 class="text-center"></h5></div>
+    <x-modal head="Спасибо за обращение!" id="tech-modal">
+        <div class="modal-body"></div>
     </x-modal>
 
     <x-modal head="Перезвоните мне!" id="feedback-modal">
@@ -119,9 +121,9 @@
             <div class="carousel-inner">
                 @foreach($carousel as $item)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}" style="background-image: url('images/carousel/{{ $item->image }}')">
-                        <div class="carousel-square">
-                            <h1>{{ $item->head }}</h1>
-                            <p class="my-5">{{ $item->text }}</p>
+                        <div class="carousel-square {{ request()->path() != '/' ? 'small' : '' }}">
+                            <h1 {{ request()->path() != '/' ? 'class=small' : '' }}>{{ $item->head }}</h1>
+                            <p class="{{ request()->path() != '/' ? 'small m-3' : 'my-5' }}">{{ $item->text }}</p>
                             <p class="mb-0"><button class="btn btn-primary rounded-0" data-bs-toggle="modal" data-bs-target="#feedback-modal">Обратная связь</button></p>
                         </div>
                     </div>

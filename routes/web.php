@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\PostController;
+use App\Models\News;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,5 +17,9 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', [BaseController::class, 'index'])->name('home');
 Route::get('/portfolio/{slug}', [BaseController::class, 'portfolio'])->name('portfolio');
-Route::get('/news/{slug?}', [BaseController::class, 'news'])->name('news');
+Route::get('/news', [BaseController::class, 'news'])->name('news');
+
 Route::post('/feedback', [PostController::class, 'feedback'])->name('feedback');
+Route::post('/get_news/{news:id}', function (News $news) {
+    return $news;
+})->name('get_news');

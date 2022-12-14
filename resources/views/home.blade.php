@@ -16,7 +16,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-lg-8 about-image"></div>
+                <div class="col-lg-8 offset-image" style="background-image: url({{ asset('images/about.jpg') }});"></div>
             </div>
         </div>
     </section>
@@ -45,13 +45,13 @@
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu3']['name'] }}</h2>
                 @foreach($news as $new)
-                    <div class="col-lg-3 col-md-6 mb-5">
+                    <div class="col-lg-3 col-md-6 mb-5 news-block" id="new{{ $new->id }}">
                         <div class="news-entry-1 h-100">
                             <div class="news-entry-1-contents">
                                 <div class="meta">{{ date('d.m.Y',$new->time) }}</div>
                                 <img class="w-100" src="{{ asset('images/news/'.$new->image) }}" />
                                 <h2>{{ $new->head }}</h2>
-                                <p class="my-3"><a href="#" class="more">Подробнее <i class="icon-arrow-right7"></i></a></p>
+                                <p class="my-3"><span class="more">Подробнее <i class="icon-arrow-right7"></i></span></p>
                             </div>
                         </div>
                     </div>

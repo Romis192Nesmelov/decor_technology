@@ -46,9 +46,11 @@ class BaseController extends Controller
         ]);
     }
 
-    public function news($slug)
+    public function news()
     {
-
+        return $this->showView('news',[
+            'news' => News::orderBy('id', 'desc')->limit(4)->paginate(12)
+        ]);
     }
 
     public function portfolio($slug)

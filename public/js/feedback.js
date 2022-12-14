@@ -19,7 +19,6 @@ $(document).ready(function ($) {
             form = $(this).parents('form'),
             popup = form.parents('.modal'),
             agree = form.find('input[name=agree]'),
-            loader = $('<div></div>').attr('id','loader').append($('<img />').attr('src','/images/preloader.gif')),
             formData = new FormData;
 
         if (!agree.is(':checked')) return false;
@@ -33,7 +32,7 @@ $(document).ready(function ($) {
 
         $('.invalid-feedback.error').html('').hide();
         form.find('input, select, textarea, button').attr('disabled','disabled');
-        addLoader(body,loader);
+        addLoader();
 
         $.ajax({
             url: form.attr('action'),
@@ -42,11 +41,13 @@ $(document).ready(function ($) {
             contentType: false,
             type: 'POST',
             success: function (data) {
-                closePopup(body,popup);
-                lockAll(body,form,loader);
+                closePopup(popup);
+                lockAll(body,form);
                 form.find('input, textarea').val('');
-                var messageModal = $('#message');
-                messageModal.find('h5').html(data.message);
+
+                let messageModal = $('#tech-modal');
+                messageModal.find('.modal-title').html('Спасибо за Ваше обращение!');
+                messageModal.find('.modal-body').html('<h6>' + data.message + '</h6>');
                 messageModal.modal('show');
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -94,25 +95,32 @@ function processingCheckFields(formData, inputObj) {
     return formData;
 }
 
-function lockAll(body,form,loader) {
+function lockAll(body,form) {
     form.find('button').attr('disabled','disabled');
     form.find('input[name=phone]').val('');
-    loader.remove();
+    $('#loader').remove();
 }
 
-function closePopup(body,modal) {
+function closePopup(modal) {
     modal.modal('hide');
-    body.css({
+    $('body').css({
         'overflow':'auto',
         'padding-right':0
     });
 }
 
-function addLoader(body,loader) {
-    body.append(loader);
-    body.css({
+function addLoader() {
+    $('body').css({
         'overflow':'hidden',
         'padding-right':20
+    }).append($('<div></div>').attr('id','loader').append($('<img />').attr('src','/images/preloader.gif')));
+}
+
+function removeLOader() {
+    $('#loader').remove();
+    $('body').css({
+        'overflow':'auto',
+        'padding-right':0
     });
 }
 
