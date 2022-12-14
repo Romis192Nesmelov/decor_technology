@@ -1,11 +1,11 @@
 @extends('layouts.main')
 
 @section('content')
-    <section class="gray py-5" data-scroll-destination="{{ $menu['menu1']['scroll'] }}">
+    <section class="gray bg1 py-5" data-scroll-destination="{{ $menu['menu1']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <div class="col-lg-4">
-                    <div class="h-90 bg-white box-offset">
+                    <div class="h-90 bg-white box box-offset">
                         <h2>{{ $menu['menu1']['name'] }}</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo mollitia id ea ab in! Nam eligendi distinctio, vitae.</p>
                         <p>Alias odit ipsam quas unde obcaecati molestiae consequatur numquam cupiditate perferendis facere, nulla nemo id, accusantium corrupti tempora.</p>
@@ -40,7 +40,7 @@
         </div>
     </section>
 
-    <section class="gray py-5" data-scroll-destination="{{ $menu['menu3']['scroll'] }}">
+    <section class="gray bg2 py-5" data-scroll-destination="{{ $menu['menu3']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu3']['name'] }}</h2>
@@ -79,7 +79,7 @@
         </div>
     </section>
 
-    <section class="gray py-5" data-scroll-destination="{{ $menu['menu7']['scroll'] }}">
+    <section class="gray bg3 py-5" data-scroll-destination="{{ $menu['menu7']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu7']['name'] }}</h2>

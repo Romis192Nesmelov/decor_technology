@@ -5,7 +5,7 @@ $(document).ready(() => {
         once: false
     });
 
-    $('a.img-preview').fancybox({padding: 3});
+    $('a.img-preview').fancybox();
     $(window).resize(function (){
         onResize();
     });

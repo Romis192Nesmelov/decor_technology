@@ -8,35 +8,17 @@ use App\Models\News;
 use App\Models\Partner;
 use App\Models\Question;
 use App\Models\Contact;
+use App\Models\Job;
+use Illuminate\Support\Facades\Cache;
 //use Illuminate\Http\Request;
 
 class BaseController extends Controller
 {
     use HelperTrait;
 
-    private $mainMenu = [
-        'menu1' => ['scroll' => 'about', 'name' => 'О компании'],
-        'menu2' => ['scroll' => 'why_us', 'name' => 'Почему мы?'],
-        'menu3' => ['scroll' => 'news', 'name' => 'Новости'],
-        'menu4' => ['href' => 'portfolio', 'name' => 'Портфолио', 'sub' => [
-            'sub1' => ['href' => 'presentations', 'name' => 'Оформление презентаций'],
-            'sub2' => ['href' => 'photo_zones', 'name' => 'Фотозоны'],
-            'sub3' => ['href' => 'automotive_brands', 'name' => 'Автомобильные бренды'],
-            'sub4' => ['href' => 'press_walls', 'name' => 'Прессволы'],
-            'sub5' => ['href' => 'podiums_and_decorations', 'name' => 'Подиумы и декорации'],
-            'sub6' => ['href' => 'street_scenes', 'name' => 'Уличные сцены'],
-            'sub7' => ['href' => 'street_decorations', 'name' => 'Уличное декоративное оформление'],
-            'sub9' => ['href' => 'conferences', 'name' => 'Конференции'],
-            'sub10' => ['href' => 'festivals', 'name' => 'Фестивали'],
-        ]],
-        'menu5' => ['scroll' => 'production', 'name' => 'Наше производство'],
-        'menu6' => ['scroll' => 'partners', 'name' => 'Наши партнеры'],
-        'menu7' => ['scroll' => 'faq', 'name' => 'Вопрос-ответ'],
-        'menu8' => ['scroll' => 'contacts', 'name' => 'Контакты']
-    ];
-
     public function index()
     {
+//        Cache::flush();
         return $this->showView('home',[
             'icons' => Icon::all(),
             'news' => News::orderBy('id', 'desc')->limit(4)->get(),
@@ -55,16 +37,41 @@ class BaseController extends Controller
 
     public function portfolio($slug)
     {
-
+        Cache::flush();
+        return $this->showView('portfolio', [
+            'activeMenuName' => 'menu4',
+            'slug' => $slug,
+            'job' => Cache::remember('job_'.$slug, (60 * 60 * 24 * 365), function() use($slug) {
+                if (!$job = Job::where('slug',$slug)->where('active',1)->first()) abort(404);
+                return $job;
+            })
+        ]);
     }
 
     private function showView($view, array $paramsArr = [])
     {
+        $mainMenu = [
+            'menu1' => ['scroll' => 'about', 'name' => 'О компании'],
+            'menu2' => ['scroll' => 'why_us', 'name' => 'Почему мы?'],
+            'menu3' => ['scroll' => 'news', 'name' => 'Новости'],
+            'menu4' => ['href' => 'portfolio', 'name' => 'Портфолио', 'sub' => []],
+            'menu5' => ['scroll' => 'production', 'name' => 'Наше производство'],
+            'menu6' => ['scroll' => 'partners', 'name' => 'Наши партнеры'],
+            'menu7' => ['scroll' => 'faq', 'name' => 'Вопрос-ответ'],
+            'menu8' => ['scroll' => 'contacts', 'name' => 'Контакты']
+        ];
+
         return view($view,
             array_merge(
                 $paramsArr,
                 [
-                    'menu' => $this->mainMenu,
+                    'menu' => Cache::remember('menu', (60 * 60 * 24 * 365), function() use($mainMenu) {
+                        $jobs = Job::where('active',1)->get();
+                        foreach ($jobs as $job) {
+                            $mainMenu['menu4']['sub']['job'.$job->id] = ['href' => $job->slug, 'name' => $job->name];
+                        }
+                        return $mainMenu;
+                    }),
                     'carousel' => Carousel::all(),
                     'metas' => $this->metas,
                     'settings' => Setting::find(1)

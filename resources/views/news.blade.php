@@ -1,7 +1,7 @@
-@extends('layouts.main')
+@extends('layouts.main', ['title' => 'Новости'])
 
 @section('content')
-    <section class="gray py-5">
+    <section class="gray bg4 py-5">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu3']['name'] }}</h2>

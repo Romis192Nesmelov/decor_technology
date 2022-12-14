@@ -27,6 +27,7 @@
     <link href="{{ asset('css/icons/fontawesome/styles.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fancybox.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
@@ -120,7 +121,7 @@
             </div>
             <div class="carousel-inner">
                 @foreach($carousel as $item)
-                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}" style="background-image: url('images/carousel/{{ $item->image }}')">
+                    <div class="carousel-item {{ $loop->first ? 'active' : '' }}" style="background-image: url({{ asset('images/carousel/'.$item->image) }})">
                         <div class="carousel-square {{ request()->path() != '/' ? 'small' : '' }}">
                             <h1 {{ request()->path() != '/' ? 'class=small' : '' }}>{{ $item->head }}</h1>
                             <p class="{{ request()->path() != '/' ? 'small m-3' : 'my-5' }}">{{ $item->text }}</p>

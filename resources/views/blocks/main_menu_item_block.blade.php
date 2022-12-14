@@ -1,5 +1,5 @@
 <li {{ isset($liClass) && $liClass ? 'class='.$liClass : '' }}>
-    <a {{ isset($aClass) ? 'class='.$aClass.(isset($activeFlag) && $activeFlag ? ' active' : '') : '' }}
+    <a class="{{ isset($aClass) ? $aClass.(isset($activeFlag) && $activeFlag ? ' active' : '') : '' }}"
        @if (request()->path() != '/' && !isset($menuItem['href']))
            href="{{ route('home',['scroll' => $menuItem['scroll']]) }}"
        @elseif (isset($menuItem['href']))
