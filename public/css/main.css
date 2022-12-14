@@ -349,6 +349,15 @@ iframe {
     .navbar li {
         margin: 0 5px;
     }
+
+    .box {
+        padding: 2rem;
+    }
+
+    .box p {
+        font-size: 0.8rem;
+        line-height: 1rem;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -398,6 +407,15 @@ iframe {
 
     .offset-image {
         height: 400px;
+    }
+
+    .box {
+        padding: 4rem;
+    }
+
+    .box p {
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 }
 
