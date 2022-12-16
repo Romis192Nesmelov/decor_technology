@@ -17,11 +17,11 @@ class QuestionsSeeder extends Seeder
         $data = [
             [
                 'question' => 'Как сделать заказ?',
-                'answer' => 'Pellentesque massa mi, cursus ac pellentesque a, laoreet bibendum velit. Cras felis augue, scelerisque vitae lobortis vel, pellentesque sed orci.'
+                'answer' => 'Для того что бы сделать заказ Вам нужно прислать подробное техническое задание с размерами необходимых вам декораций и описанием материалов. Если у Вас нет тонный размеров и вы не обладаете информацией по материалам, мы сделаем примерный расчет и поможем с выбором материалов.'
             ],
             [
                 'question' => 'Нужны ли чертежи и тех.документация?',
-                'answer' => 'Pellentesque massa mi, cursus ac pellentesque a, laoreet bibendum velit. Cras felis augue, scelerisque vitae lobortis vel, pellentesque sed orci.'
+                'answer' => 'При необходимости мы сделаем план размещения декораций с привязкой к площадке. Также, по требованию, мы предоставляем документы о противопожарной обработке материалов, выполняем расчет  пожарной нагрузки и при использовании в  декорационном оформлении электриеских приборов мы предоставляем заключение электролабаратории.'
             ],
             [
                 'question' => 'Делаете ли вы дизайн-проекты?',
@@ -29,15 +29,15 @@ class QuestionsSeeder extends Seeder
             ],
             [
                 'question' => 'Возможна ли застройка (транспортировка) в другом городе или регионе?',
-                'answer' => 'Pellentesque massa mi, cursus ac pellentesque a, laoreet bibendum velit. Cras felis augue, scelerisque vitae lobortis vel, pellentesque sed orci.'
+                'answer' => 'Мы работаем любых городах России. Мы уже строили декорации в таких городах как: Санкт – Петербург, Сочи, Симферополь, Керчь, Севастополь, Заполярный, Мончегорск, Уфа, Екатеринбург.'
             ],
             [
                 'question' => 'Какие сроки на застройку?',
-                'answer' => 'Pellentesque massa mi, cursus ac pellentesque a, laoreet bibendum velit. Cras felis augue, scelerisque vitae lobortis vel, pellentesque sed orci.'
+                'answer' => 'Все зависит от объема застройки, особенностей декорационного оформления и площадки. Но как правило декорации для среднестатистического мероприятия изготавливаются за 2-3 дня а монтируются за 10 часов.'
             ],
             [
                 'question' => 'Даете ли вы гарантию или страховку?',
-                'answer' => 'Pellentesque massa mi, cursus ac pellentesque a, laoreet bibendum velit. Cras felis augue, scelerisque vitae lobortis vel, pellentesque sed orci.'
+                'answer' => 'Декорации которые работаю не один день мы обслуживаем в течении всего времени эксплуатации. А на мероприятиях, где используются наши декорации мы оставляем дежурного декоратора, который оперативно решат все вопросы связанные с декорационным оформлением (но как правило этого не происходит).'
             ],
         ];
 

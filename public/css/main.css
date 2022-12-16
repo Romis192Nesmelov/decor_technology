@@ -249,13 +249,13 @@ a.page-link {
     background-position: center center;
 }
 
-.portfolio-image {
-    border: 3px solid #358673;
-}
+/*.portfolio-image {*/
+/*    border: 3px solid #358673;*/
+/*}*/
 
-.portfolio-image img {
-    border: 10px solid white;
-}
+/*.portfolio-image img {*/
+/*    border: 10px solid white;*/
+/*}*/
 
 .news-block {
     cursor: pointer;

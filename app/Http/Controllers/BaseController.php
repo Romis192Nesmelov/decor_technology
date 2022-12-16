@@ -9,6 +9,7 @@ use App\Models\Partner;
 use App\Models\Question;
 use App\Models\Contact;
 use App\Models\Job;
+use App\Models\Production;
 use Illuminate\Support\Facades\Cache;
 //use Illuminate\Http\Request;
 
@@ -73,6 +74,7 @@ class BaseController extends Controller
                         return $mainMenu;
                     }),
                     'carousel' => Carousel::all(),
+                    'production' => Production::all(),
                     'metas' => $this->metas,
                     'settings' => Setting::find(1)
                 ]

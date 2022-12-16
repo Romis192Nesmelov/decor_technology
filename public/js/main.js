@@ -27,7 +27,6 @@ $(document).ready(() => {
         // console.log(window.menuScrollFlag);
         e.preventDefault();
         let self = $(this);
-        console.log(window.menuScrollFlag);
         if (!window.menuScrollFlag) {
             gotoScroll(self.attr('data-scroll'));
         }
@@ -56,6 +55,31 @@ $(document).ready(() => {
             removeLOader();
             newsModal.modal('show');
         });
+    });
+
+    // Production carousel
+    $('.owl-carousel.production').owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout:3000,
+        dots: false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 3
+            },
+            1000: {
+                items: 4
+            },
+            1200: {
+                items: 5
+            },
+        },
+        // navText:[navButtonBlack1,navButtonBlack2]
     });
 });
 

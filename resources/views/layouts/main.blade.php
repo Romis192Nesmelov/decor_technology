@@ -28,6 +28,8 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/aos.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fancybox.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/owl.carousel.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('css/owl.theme.default.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" type="text/javascript"></script>
@@ -37,6 +39,7 @@
     <script src="{{ asset('js/aos.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/fancybox.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/jquery.maskedinput.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/owl.carousel.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/feedback.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
 </head>

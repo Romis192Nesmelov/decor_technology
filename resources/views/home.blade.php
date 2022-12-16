@@ -44,8 +44,8 @@
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu3']['name'] }}</h2>
-                @foreach($news as $new)
-                    <div class="col-lg-3 col-md-6 mb-5 news-block" id="new{{ $new->id }}">
+                @foreach($news as $k => $new)
+                    <div class="col-lg-3 col-md-6 mb-5 news-block aos-init aos-animate" id="new{{ $new->id }}" data-aos="fade-up" data-aos-delay="{{ ($k+1) * 150 }}">
                         <div class="news-entry-1 h-100">
                             <div class="news-entry-1-contents">
                                 <div class="meta">{{ date('d.m.Y',$new->time) }}</div>
@@ -61,7 +61,22 @@
         </div>
     </section>
 
-    <section class="py-5" data-scroll-destination="{{ $menu['menu6']['scroll'] }}">
+    <section class="py-5" data-scroll-destination="{{ $menu['menu5']['scroll'] }}">
+        <div class="container">
+            <div class="row">
+                <h2>{{ $menu['menu5']['name'] }}</h2>
+                <div class="owl-carousel production">
+                    @foreach($production as $photo)
+                        <a class="img-preview" href="{{ asset('images/production/'.$photo->full) }}">
+                            <img class="w-100" src="{{ asset('images/production/'.$photo->preview) }}" />
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gray bg3 py-5" data-scroll-destination="{{ $menu['menu6']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu6']['name'] }}</h2>
@@ -79,7 +94,7 @@
         </div>
     </section>
 
-    <section class="gray bg3 py-5" data-scroll-destination="{{ $menu['menu7']['scroll'] }}">
+    <section class="py-5" data-scroll-destination="{{ $menu['menu7']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu7']['name'] }}</h2>
@@ -99,7 +114,7 @@
         </div>
     </section>
 
-    <section class="py-5" data-scroll-destination="{{ $menu['menu8']['scroll'] }}">
+    <section class="gray bg4 py-5" data-scroll-destination="{{ $menu['menu8']['scroll'] }}">
         <div class="container">
             <div class="row align-items-stretch">
                 <h2>{{ $menu['menu8']['name'] }}</h2>
