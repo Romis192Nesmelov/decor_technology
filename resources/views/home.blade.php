@@ -83,10 +83,10 @@
                 @foreach($partners as $k => $partner)
                     <div class="col-lg-3 col-md-3 my-3 aos-init aos-animate" data-aos="fade-up" data-aos-delay="{{ ($k+1) * 150 }}">
                         <div class="box-icons text-center">
-                            <span class="img-wrap mb-5">
+                            <div class="img-wrap mb-5 partner-logo">
                                 <img src="{{ asset('images/partners/'.$partner->logo) }}" alt="{{ $partner->name }}" class="w-100 logo">
-                            </span>
-                            <h3 class="mt-4">{{ $partner->name }}</h3>
+                            </div>
+                            <h3 class="mt-4">{!! $partner->name !!}</h3>
                         </div>
                     </div>
                 @endforeach

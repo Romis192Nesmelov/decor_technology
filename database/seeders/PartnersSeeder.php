@@ -16,36 +16,36 @@ class PartnersSeeder extends Seeder
     {
         $data = [
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #1'
+                'logo' => 'arscom.png',
+                'name' => 'Агентство<br>полного цикла'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #2'
+                'logo' => 'eventum_premo.svg',
+                'name' => 'Digital<br>и event-агентство'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #3'
+                'logo' => 'karandash.svg',
+                'name' => 'Коммуникационное<br>ивент агентство'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #4'
+                'logo' => 'cooper_moscow.svg',
+                'name' => 'Digital<br>и event-агентство'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #5'
+                'logo' => 'action.svg',
+                'name' => 'Маркетинговое<br>агентство'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #6'
+                'logo' => 'redday.svg',
+                'name' => 'Российское<br>ивент агентство'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #7'
+                'logo' => 'avantage.jpg',
+                'name' => 'Агентство<br>бутикового типа'
             ],
             [
-                'logo' => 'partner1.svg',
-                'name' => 'Партнер #8'
+                'logo' => 'best_practice.svg',
+                'name' => 'Агентство<br>бутикового типа'
             ],
         ];
 
