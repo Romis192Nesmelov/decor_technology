@@ -32,6 +32,6 @@ class since extends Component
      */
     public function render()
     {
-        return view('components.since');
+        return view('components.since', ['yearNum' => $this->yearNum()]);
     }
 }
