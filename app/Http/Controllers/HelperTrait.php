@@ -42,6 +42,14 @@ trait HelperTrait
         'meta_google_site_verification' => ['name' => 'robots', 'property' => false],
     ];
 
+    public function sinceYear($year)
+    {
+        $endYears = (int)substr($year,-1);
+        if (!$endYears || ($endYears >= 5 && $endYears <= 9)) return $year.' лет';
+        elseif ($endYears >= 2 && $endYears <= 4) return $year.' года';
+        else return $year.' год';
+    }
+
 //    private function convertTime($time)
 //    {
 //        $time = explode('/', $time);

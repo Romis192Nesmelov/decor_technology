@@ -73,6 +73,7 @@ class BaseController extends Controller
                         }
                         return $mainMenu;
                     }),
+                    'since' => $this->sinceYear(date('Y') - 2004),
                     'carousel' => Carousel::all(),
                     'production' => Production::all(),
                     'metas' => $this->metas,
