@@ -17,12 +17,6 @@ class NewsSeeder extends Seeder
         $data = [
             [
                 'time' => time(),
-                'image' => 'news1.jpg',
-                'head' => 'Iusto quos veniam magni totam 1',
-                'text' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique mollis mi vitae mollis. Donec ornare massa vulputate lectus dictum dapibus. Pellentesque at malesuada nulla. Proin accumsan aliquam ornare. Pellentesque ullamcorper velit nec lobortis placerat. Sed ornare elementum lacus eu condimentum. In sit amet turpis vel urna egestas egestas at eget enim. Aliquam et tellus quis sem dignissim commodo. Quisque lacinia dictum tortor, in malesuada tellus aliquam nec. Vestibulum sed euismod dolor. Aenean facilisis lobortis nulla, quis vestibulum dui dapibus in. Morbi malesuada tristique ante ut vehicula.</p>'
-            ],
-            [
-                'time' => time(),
                 'image' => 'news2.jpg',
                 'head' => 'Iusto quos veniam magni totam 2',
                 'text' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut sed quam pharetra tortor feugiat fringilla eu at nisl. Nunc lobortis ultrices enim et pharetra. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus cursus nibh eu vestibulum pharetra. Proin ornare augue id elit scelerisque euismod. Nunc tempus, massa at aliquam faucibus, neque est pellentesque ex, sit amet facilisis sem erat eu arcu. Aliquam eget tellus commodo, porta tellus sed, dapibus velit. Nullam euismod dui quis nibh cursus dignissim eu eget felis. Cras sed diam a massa dictum dignissim vitae ornare ante. Donec vitae vestibulum augue, et cursus quam. Vivamus eleifend mi at lorem egestas, sed fringilla magna posuere. Proin convallis, erat nec dignissim volutpat, nunc ante porttitor nisl, ac volutpat leo justo in ipsum. Maecenas et velit mollis, vulputate nulla ac, tincidunt lacus.</p>'
@@ -38,6 +32,12 @@ class NewsSeeder extends Seeder
                 'image' => 'news4.jpg',
                 'head' => 'Iusto quos veniam magni totam 4',
                 'text' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non nisl ultrices, condimentum mi nec, pellentesque turpis. Donec aliquam dui vel metus tempor pulvinar. Nulla a odio nec nisl malesuada venenatis nec vel dui. Donec finibus, dolor ac commodo iaculis, ex elit tristique turpis, id consectetur metus tellus non diam. Duis a congue diam. Nam at iaculis quam. Aliquam scelerisque mi vel leo gravida, in tristique nibh dictum. Curabitur vitae augue ullamcorper, placerat nibh sed, molestie arcu. Maecenas libero sapien, volutpat et justo ut, sollicitudin placerat ante. Morbi facilisis, metus vel fermentum aliquet, turpis neque hendrerit lacus, id vehicula nibh lacus id lorem. Duis volutpat in tortor et lacinia. Donec ipsum lacus, varius sit amet elementum ut, cursus vitae orci. Vivamus commodo orci a velit pellentesque, at condimentum elit molestie. Nam mauris quam, varius porta rhoncus a, congue a dui. Praesent quis ipsum nibh. Sed mi ante, malesuada eget malesuada non, scelerisque ac ex.</p>'
+            ],
+            [
+                'time' => strtotime('02 December 2002'),
+                'image' => 'news1.jpg',
+                'head' => 'Новогодняя ярмарка в ТЦ «Метрополис»',
+                'text' => '<p>В декабре как правило у всех много проектов, но только один бывает по истине выдающимся, так для нашей компании это стал проект по декорационному оформлению новогодней ярмарки в ТЦ «МЕТРОПОЛИС». За две недели непрерывной работы мы подготовили все декорационное оформление, а также 9 торговых точек на площади в 216 квадратных метров. Десятки сварных конструкций, сотни квадратных метров пластика и столько же самоклеющееся пленники с печатью наивысшего качества, сотни метров световых гирлянд и гибкого неона, ну и конечно десятки «золотых» рук наших сотрудников – вот и все что потребовалось, чтобы реализовать этот проект!!!</p>'
             ],
         ];
 

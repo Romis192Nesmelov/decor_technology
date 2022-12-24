@@ -20,11 +20,11 @@ class ContactsSeeder extends Seeder
                 'name' => 'Роман',
                 'is_phone' => 1
             ],
-            [
-                'contact' => '+7(926)602-54-87',
-                'name' => 'Максим',
-                'is_phone' => 1
-            ],
+//            [
+//                'contact' => '+7(926)602-54-87',
+//                'name' => 'Максим',
+//                'is_phone' => 1
+//            ],
             [
                 'contact' => '+7(903)678-75-25',
                 'name' => 'Алексей',

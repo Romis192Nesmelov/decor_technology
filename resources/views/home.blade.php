@@ -7,11 +7,10 @@
                 <div class="col-lg-4">
                     <div class="h-90 bg-white box box-offset">
                         <h2>{{ $menu['menu1']['name'] }}</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo mollitia id ea ab in! Nam eligendi distinctio, vitae.</p>
-                        <p>Alias odit ipsam quas unde obcaecati molestiae consequatur numquam cupiditate perferendis facere, nulla nemo id, accusantium corrupti tempora.</p>
-                        <p>Nam in velit sit amet turpis aliquam laoreet. Curabitur vulputate risus ac sapien viverra, eget sodales tellus eleifend. In ac ligula imperdiet, pharetra lacus in, luctus quam. Vestibulum.</p>
+                        <p>Уже <x-since year="{{ date('Y') - 2004 }}"></x-since> наша компания <b>Dekor Technology</b> занимается производством и оформлением декораций для различных мероприятий. За это время мы смогли наладить собственное производство и собрать команду высококвалифицированных специалистов, которые готовы выполнить ваш заказ любой сложности.</p>
+                        <p>Такие агентства, как <b>Еventum Рremo</b>, <b>Karandash</b>, <b>Аction</b> и многие другие доверяют оформление своих мероприятий именно нам. Компания <b>Dekor Technology</b> готова выполнить ваш заказ с использованием любых материалов в любой сфере декорационного оформления, а наши цены и скидки приятно Вас удивят.</p>
                         <p class="mt-5">
-                            <span class="d-block font-weight-bold text-black">Алексей Сухин</span>
+                            <span class="d-block font-weight-bold text-black"><b>Алексей Сухин</b></span>
                             <span class="d-block font-weight-bold text-muted">Генеральный директор</span>
                         </p>
                     </div>
