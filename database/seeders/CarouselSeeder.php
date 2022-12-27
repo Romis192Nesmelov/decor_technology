@@ -16,23 +16,23 @@ class CarouselSeeder extends Seeder
     {
         $data = [
             [
-                'head' => 'Lorem ipsum dolor sit amet, consectetur.',
-                'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deleniti similique, nesciunt.',
+                'head' => 'Презентация VIVO V7 / V7+',
+                'text' => 'Оформление презентации нового смартфона VIVO V7 / V7+ в Конгресс-Парке.',
                 'image' => 'image1.jpg'
             ],
             [
-                'head' => 'Lorem ipsum dolor sit amet, consectetur.',
-                'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deleniti similique, nesciunt.',
+                'head' => 'Конференция «Алкон» в CRYSTAL BALLROOM',
+                'text' => 'Оформление конференции для компании «Алкон» в CRYSTAL BALLROOM.',
                 'image' => 'image2.jpg'
             ],
             [
-                'head' => 'Lorem ipsum dolor sit amet, consectetur.',
-                'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deleniti similique, nesciunt.',
+                'head' => 'Конференция в центре Toyota Moscow',
+                'text' => 'Оформление конференции для компании «Toyota» в дилерском центре Toyota Moscow.',
                 'image' => 'image3.jpg'
             ],
             [
-                'head' => 'Lorem ipsum dolor sit amet, consectetur.',
-                'text' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto deleniti similique, nesciunt.',
+                'head' => 'Конференция «Servier» в «СКОЛКОВО»',
+                'text' => 'Оформление конференции для компании «Servier» в учебном центре «СКОЛКОВО».',
                 'image' => 'image4.jpg'
             ],
         ];
