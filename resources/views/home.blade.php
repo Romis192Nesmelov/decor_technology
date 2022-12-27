@@ -4,7 +4,7 @@
     <x-section class="gray bg1" rowClass="align-items-stretch" data-scroll-destination="{{ $menu['menu1']['scroll'] }}">
         <div class="col-lg-4">
             <div class="h-90 bg-white box box-offset">
-                <h2>{{ $menu['menu1']['name'] }}</h2>
+                <h2>{{ $about->head }}</h2>
                 {!! str_replace('%since%',$since,$about->text) !!}
             </div>
         </div>

@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12 row row-cols-auto">
-                    @foreach($job->jobImages as $image)
+                    @foreach($job->images as $image)
                         <div class="col-lg-6 col-md-12 col-sm-12">
                             <div class="portfolio-image">
                                 <a class="img-preview" href="{{ asset('images/portfolio/'.$image->full) }}">

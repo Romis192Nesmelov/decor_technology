@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Model;
 
 trait HelperTrait
 {
@@ -13,19 +14,15 @@ trait HelperTrait
         'phone' => 'max:2000',
         'i_agree' => 'required|accepted'
     ];
-    private $validationDoc = 'required|mimes:doc,docx';
+    public $validationString = 'required|min:3|max:255';
+    public $validationSmallString = 'required|min:3|max:100';
+    public $validationText = 'required|min:5|max:1200';
+//    public $validationColor = 'regex:/^(hsv\((\d+)\,\s(\d+)\%\,\s(\d+)\%\))$/';
+    public $validationSvg = 'mimes:svg|max:10';
+    public $validationDoc = 'mimes:pdf|max:10000';
+    public $validationJpg = 'mimes:jpg|max:2000';
+    public $validationDate = 'regex:/^(\d{2})\/(\d{2})\/(\d{4})$/';
 
-    private function getRequestValidation()
-    {
-        return [
-            'organization_name' => 'required|min:3|max:255',
-            'email' => 'required|email',
-            'phone' => $this->validationPhone, 
-            'field_of_activity' => 'max:1000',
-            'i_agree' => 'required|accepted'
-        ];
-    }
-    
     private $metas = [
         'meta_description' => ['name' => 'description', 'property' => false],
         'meta_keywords' => ['name' => 'keywords', 'property' => false],
@@ -42,6 +39,11 @@ trait HelperTrait
         'meta_google_site_verification' => ['name' => 'robots', 'property' => false],
     ];
 
+    public function saveCompleteMessage()
+    {
+        session()->flash('message', trans('content.save_complete'));
+    }
+
     public function sinceYear($year)
     {
         $endYears = (int)substr($year,-1);
@@ -50,11 +52,22 @@ trait HelperTrait
         else return $year.' год';
     }
 
-//    private function convertTime($time)
-//    {
-//        $time = explode('/', $time);
-//        return $time[1].'/'.$time[0].'/'.$time[2];
-//    }
+    public function processingFile(Request $request, $field, $path, $newFileName)
+    {
+//        $fileName = $request->file($field)->getClientOriginalName();
+        $request->file($field)->move(base_path('public/'.$path.'/'), $newFileName);
+    }
+
+    private function convertTime($time)
+    {
+        $time = explode('/', $time);
+        return strtotime($time[1].'/'.$time[0].'/'.$time[2]);
+    }
+
+    private function getBool($fieldName, Model $model)
+    {
+        return array_search($fieldName,$model->getFillable()) !== false ? 1 : 0;
+    }
 
 //    private function sendMessage($template, array $fields, $pathToFile=null, $copyTo=null)
 //    {

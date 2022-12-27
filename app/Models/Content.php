@@ -5,5 +5,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Content extends Model
 {
-    protected $fillable = ['text'];
+    protected $fillable = ['head','text'];
 }

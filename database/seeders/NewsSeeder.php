@@ -23,7 +23,7 @@ class NewsSeeder extends Seeder
             ],
             [
                 'time' => time(),
-                'image' => 'news4.jpg',
+                'image' => 'news2.jpg',
                 'head' => 'Iusto quos veniam magni totam ultrices 2',
                 'text' => '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non nisl ultrices, condimentum mi nec, pellentesque turpis. Donec aliquam dui vel metus tempor pulvinar. Nulla a odio nec nisl malesuada venenatis nec vel dui. Donec finibus, dolor ac commodo iaculis, ex elit tristique turpis, id consectetur metus tellus non diam. Duis a congue diam. Nam at iaculis quam. Aliquam scelerisque mi vel leo gravida, in tristique nibh dictum. Curabitur vitae augue ullamcorper, placerat nibh sed, molestie arcu. Maecenas libero sapien, volutpat et justo ut, sollicitudin placerat ante. Morbi facilisis, metus vel fermentum aliquet, turpis neque hendrerit lacus, id vehicula nibh lacus id lorem. Duis volutpat in tortor et lacinia. Donec ipsum lacus, varius sit amet elementum ut, cursus vitae orci. Vivamus commodo orci a velit pellentesque, at condimentum elit molestie. Nam mauris quam, varius porta rhoncus a, congue a dui. Praesent quis ipsum nibh. Sed mi ante, malesuada eget malesuada non, scelerisque ac ex.</p>'
             ],
@@ -35,10 +35,8 @@ class NewsSeeder extends Seeder
             ],
         ];
 
-        for ($i=0;$i<5;$i++) {
-            foreach($data as $item) {
-                News::create($item);
-            }
+        foreach($data as $item) {
+            News::create($item);
         }
     }
 }

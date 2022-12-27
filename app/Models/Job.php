@@ -13,7 +13,7 @@ class Job extends Model
         'active'
     ];
 
-    public function jobImages()
+    public function images()
     {
         return $this->hasMany(JobImage::class);
     }
