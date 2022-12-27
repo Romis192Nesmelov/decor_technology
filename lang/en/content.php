@@ -43,6 +43,14 @@ return [
     'title' => 'Title',
     'content' => 'Content',
 
+    'slide_carousel' => 'Slide image',
+    'title_carousel' => 'Slide head',
+    'text_carousel' => 'Slide text',
+    'add_slide' => 'Add slide',
+    'adding_slide' => 'Adding slide',
+    'edit_slide' => 'Edit slide id№:id',
+    'do_you_really_want_delete_this_slide' => 'Do you really want delete this slide?',
+
     'news_image' => 'News image',
     'title_news' => 'News title',
     'content_news' => 'News content',

@@ -43,6 +43,14 @@ return [
     'title' => 'Заголовок',
     'content' => 'Содержание',
 
+    'slide_carousel' => 'Картинка слайда',
+    'title_carousel' => 'Заголовок слайда',
+    'text_carousel' => 'Текст слайда',
+    'add_slide' => 'Добавить слайд',
+    'adding_slide' => 'Добавление слайда',
+    'edit_slide' => 'Редактирование слайда id№:id',
+    'do_you_really_want_delete_this_slide' => 'Вы действительно хотите удалить этот слайд?',
+
     'news_image' => 'Картинка новости',
     'title_news' => 'Заголовок новости',
     'content_news' => 'Содержание новости',

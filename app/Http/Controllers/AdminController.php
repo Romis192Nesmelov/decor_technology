@@ -8,6 +8,7 @@ use App\Models\JobImage;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
+use App\Models\Carousel;
 use App\Models\News;
 use App\Models\Setting;
 use App\Models\Content;
@@ -51,6 +52,13 @@ class AdminController extends Controller
                 'name' => trans('admin_menu.why_us'),
                 'description' => trans('admin_menu.why_us_description'),
                 'icon' => 'icon-people',
+            ],
+            'carousel' => [
+                'id' => 'carousel',
+                'href' => 'admin.carousel',
+                'name' => trans('admin_menu.carousel'),
+                'description' => trans('admin_menu.carousel_description'),
+                'icon' => 'icon-image3',
             ],
             'news' => [
                 'id' => 'news',
@@ -140,6 +148,44 @@ class AdminController extends Controller
     public function deleteUser(Request $request)
     {
         return $this->deleteSomething($request, new User());
+    }
+
+    public function carousel(Request $request, $slug=null)
+    {
+        return $this->getSomething(
+            $request,new Carousel(),
+            'carousel',
+            'slides',
+            $slug,
+            'content.edit_slide',
+            'content.adding_slide',
+            'slides',
+            'slide'
+        );
+    }
+
+    public function editCarousel(Request $request)
+    {
+        $validationArr = [
+            'head' => $this->validationSmallString,
+            'text' => $this->validationSmallString,
+        ];
+
+        return $this->editSometing (
+            $request,
+            new Carousel(),
+            $validationArr,
+            'carousel',
+            $this->validationJpg,
+            'images/carousel',
+            'image%id%.jpg',
+            'image'
+        );
+    }
+
+    public function deleteCarousel(Request $request)
+    {
+        return $this->deleteSomething($request, new Carousel(), 'image', 'images/carousel');
     }
 
     public function news(Request $request, $slug=null)

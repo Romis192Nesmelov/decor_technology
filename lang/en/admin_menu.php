@@ -4,6 +4,8 @@ return [
     'home' => 'Home',
     'admins' => 'Admins',
     'admins_description' => 'Adding, removing and editing admins',
+    'carousel' => 'Carousel',
+    'carousel_description' => 'Adding, deleting and editing carousel',
     'news' => 'News',
     'news_description' => 'Adding, deleting and editing news',
     'settings' => 'Settings',

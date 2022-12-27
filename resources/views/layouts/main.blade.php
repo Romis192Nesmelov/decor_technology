@@ -172,11 +172,11 @@
                             ])
                         </form>
                     </div>
-                    <h2 class="footer-heading mb-4">Наши работы в сети</h2>
-                    <a href="#" class="smoothscroll px-0"><span class="icon-facebook"></span></a>
-                    <a href="#" class="px-3 pr-3"><span class="icon-instagram"></span></a>
-                    <a href="#" class="px-3 pr-3"><span class="fa fa-vk"></span></a>
-                    <a href="#" class="px-3 pr-3"><span class="icon-cloud2"></span></a>
+{{--                    <h2 class="footer-heading mb-4">Наши работы в сети</h2>--}}
+{{--                    <a href="#" class="smoothscroll px-0"><span class="icon-facebook"></span></a>--}}
+{{--                    <a href="#" class="px-3 pr-3"><span class="icon-instagram"></span></a>--}}
+{{--                    <a href="#" class="px-3 pr-3"><span class="fa fa-vk"></span></a>--}}
+{{--                    <a href="#" class="px-3 pr-3"><span class="icon-cloud2"></span></a>--}}
                 </div>
             </div>
             <div class="row pt-5 mt-5 text-center">

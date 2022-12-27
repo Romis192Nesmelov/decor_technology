@@ -39,6 +39,10 @@ Route::prefix('admin')->middleware(['auth'])->name('admin.')->group(function () 
     Route::post('/edit-user', [AdminController::class, 'editUser'])->name('edit_user');
     Route::post('/delete-user', [AdminController::class, 'deleteUser'])->name('delete-user');
 
+    Route::get('/carousel/{slug?}', [AdminController::class, 'carousel'])->name('carousel');
+    Route::post('/edit-carousel', [AdminController::class, 'editCarousel'])->name('edit_carousel');
+    Route::post('/delete-carousel', [AdminController::class, 'deleteCarousel'])->name('delete-carousel');
+
     Route::get('/news/{slug?}', [AdminController::class, 'news'])->name('news');
     Route::post('/edit-news', [AdminController::class, 'editNews'])->name('edit_news');
     Route::post('/delete-news', [AdminController::class, 'deleteNews'])->name('delete-news');
