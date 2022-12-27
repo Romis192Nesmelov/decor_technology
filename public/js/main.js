@@ -52,7 +52,7 @@ $(document).ready(() => {
                 })
             ).append(data.text);
             newsModal.find('.modal-body').html(newsContent);
-            removeLOader();
+            removeLoader();
             newsModal.modal('show');
         });
     });

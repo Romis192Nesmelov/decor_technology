@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Setting;
 use App\Models\Carousel;
+use App\Models\Content;
 use App\Models\Icon;
 use App\Models\News;
 use App\Models\Partner;
@@ -22,7 +23,7 @@ class BaseController extends Controller
 //        Cache::flush();
         return $this->showView('home',[
             'icons' => Icon::all(),
-            'news' => News::orderBy('id', 'desc')->limit(4)->get(),
+            'news' => News::orderBy('id', 'desc')->limit(3)->get(),
             'partners' => Partner::all(),
             'faq' => Question::all(),
             'contacts' => Contact::all()
@@ -38,7 +39,7 @@ class BaseController extends Controller
 
     public function portfolio($slug)
     {
-        Cache::flush();
+//        Cache::flush();
         return $this->showView('portfolio', [
             'activeMenuName' => 'menu4',
             'slug' => $slug,
@@ -74,6 +75,7 @@ class BaseController extends Controller
                         return $mainMenu;
                     }),
                     'since' => $this->sinceYear(date('Y') - 2004),
+                    'about' => Content::find(1),
                     'carousel' => Carousel::all(),
                     'production' => Production::all(),
                     'metas' => $this->metas,

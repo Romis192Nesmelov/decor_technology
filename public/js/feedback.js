@@ -31,7 +31,6 @@ $(document).ready(function ($) {
         });
 
         $('.invalid-feedback.error').html('').hide();
-        form.find('input, select, textarea, button').attr('disabled','disabled');
         addLoader();
 
         $.ajax({
@@ -42,30 +41,33 @@ $(document).ready(function ($) {
             type: 'POST',
             success: function (data) {
                 closePopup(popup);
-                lockAll(body,form);
                 form.find('input, textarea').val('');
 
                 let messageModal = $('#tech-modal');
                 messageModal.find('.modal-title').html('Спасибо за Ваше обращение!');
-                messageModal.find('.modal-body').html('<h6>' + data.message + '</h6>');
+                messageModal.find('.modal-body').html('<h3 class="text-center">' + data.message + '</h3>');
+                removeLoader();
                 messageModal.modal('show');
             },
+
             error: function (jqXHR, textStatus, errorThrown) {
                 var responseMsg = jQuery.parseJSON(jqXHR.responseText),
                     replaceErr = {
                         'phone':'«Телефон»',
                         'email':'«E-mail»',
-                        'user_name':'«Имя»'
+                        'name':'«Имя»',
+                        'message':'«Сообщение»'
                     };
 
                 $.each(responseMsg.errors, function (field, error) {
                     var errorMsg = error[0],
-                        errorBlock = form.find('.invalid-feedback.error.'+field);
+                        errorBlock = form.find('.error.'+field);
 
                     $.each(replaceErr, function (src,replace) {
                         errorMsg = errorMsg.replace(src,replace);
                     });
                     errorBlock.html(errorMsg).show();
+                    removeLoader();
                 });
             }
         });
@@ -116,7 +118,7 @@ function addLoader() {
     }).append($('<div></div>').attr('id','loader').append($('<img />').attr('src','/images/preloader.gif')));
 }
 
-function removeLOader() {
+function removeLoader() {
     $('#loader').remove();
     $('body').css({
         'overflow':'auto',

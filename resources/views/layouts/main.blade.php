@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <x-modal head="Спасибо за обращение!" id="tech-modal">
+    <x-modal id="tech-modal">
         <div class="modal-body"></div>
     </x-modal>
 
