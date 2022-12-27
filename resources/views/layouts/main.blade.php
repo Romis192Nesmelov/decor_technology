@@ -140,7 +140,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             <h2 class="footer-heading mb-4">{{ $menu['menu1']['name'] }}</h2>
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+                            <p>{{ explode('.',str_replace('%since%',$since,strip_tags($about->text)))[0] }}.</p>
                         </div>
                         <div class="col-md-4 ml-auto">
                             <ul class="list-unstyled">
