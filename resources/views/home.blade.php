@@ -33,7 +33,7 @@
                     <div class="news-entry-1-contents">
                         <div class="meta">{{ date('d.m.Y',$new->time) }}</div>
                         <img class="w-100" src="{{ asset('images/news/'.$new->image) }}" />
-                        <h2>{{ $new->head }}</h2>
+                        <h2>{!! $new->head !!}</h2>
                         <p class="my-3"><span class="more">Подробнее <i class="icon-arrow-right7"></i></span></p>
                     </div>
                 </div>

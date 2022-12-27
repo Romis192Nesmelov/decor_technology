@@ -153,7 +153,8 @@ class AdminController extends Controller
     public function carousel(Request $request, $slug=null)
     {
         return $this->getSomething(
-            $request,new Carousel(),
+            $request,
+            new Carousel(),
             'carousel',
             'slides',
             $slug,
