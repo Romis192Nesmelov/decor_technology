@@ -21,17 +21,17 @@ class CarouselSeeder extends Seeder
                 'image' => 'image1.jpg'
             ],
             [
-                'head' => 'Конференция «Алкон» в CRYSTAL BALLROOM',
+                'head' => '«Алкон» в CRYSTAL BALLROOM',
                 'text' => 'Оформление конференции для компании «Алкон» в CRYSTAL BALLROOM.',
                 'image' => 'image2.jpg'
             ],
             [
-                'head' => 'Конференция в центре Toyota Moscow',
+                'head' => 'Центр Toyota Moscow',
                 'text' => 'Оформление конференции для компании «Toyota» в дилерском центре Toyota Moscow.',
                 'image' => 'image3.jpg'
             ],
             [
-                'head' => 'Конференция «Servier» в «СКОЛКОВО»',
+                'head' => '«Servier» в «СКОЛКОВО»',
                 'text' => 'Оформление конференции для компании «Servier» в учебном центре «СКОЛКОВО».',
                 'image' => 'image4.jpg'
             ],
