@@ -17,12 +17,12 @@ class CarouselSeeder extends Seeder
         $data = [
             [
                 'head' => 'Презентация VIVO V7/V7+',
-                'text' => 'Оформление презентации нового смартфона VIVO V7/V7+ в Конгресс-Парке.',
+                'text' => 'Оформление презентации нового смартфона VIVO V7/V7+ в Конгресс-Парке.',
                 'image' => 'image1.jpg'
             ],
             [
                 'head' => '«Алкон» в CRYSTAL BALLROOM',
-                'text' => 'Оформление конференции для компании «Алкон» в CRYSTAL BALLROOM.',
+                'text' => 'Оформление конференции для компании «Алкон» в CRYSTAL BALLROOM.',
                 'image' => 'image2.jpg'
             ],
             [

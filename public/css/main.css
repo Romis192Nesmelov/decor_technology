@@ -15,11 +15,12 @@ h1 {
 }
 
 h1.small {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 p.small {
     font-size: 1rem;
+    margin-bottom: 25px !important;
 }
 
 b {
@@ -154,7 +155,7 @@ b {
 
 .carousel-square.small {
     width: 350px;
-    height: 300px;
+    height: 10em;
     padding: 3rem;
 }
 
